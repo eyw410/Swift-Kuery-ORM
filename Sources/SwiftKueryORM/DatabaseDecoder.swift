@@ -115,6 +115,7 @@ open class DatabaseDecoder {
             let unwrappedValue = try unwrapValue(key, checkValueExitence(key))
             let returnValue: Int
             switch(unwrappedValue) {
+            case let v as Int8: returnValue = Int(v)
             case let v as Int16: returnValue = Int(v)
             case let v as Int32: returnValue = Int(v)
             case let v as Int64: returnValue = Int(v)
@@ -241,6 +242,7 @@ open class DatabaseDecoder {
             if value == nil { return nil}
             let returnValue: Int
             switch(value){
+            case let v as Int8: returnValue = Int(v)
             case let v as Int16: returnValue = Int(v)
             case let v as Int32: returnValue = Int(v)
             case let v as Int64: returnValue = Int(v)
